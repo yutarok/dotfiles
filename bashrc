@@ -1,6 +1,7 @@
 # --環境別の定義-------------------
 if [ `uname` = "Darwin" ]; then
     # ==mac==
+	alias sbl="'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'"
 	if [ -d /Applications/android-sdk-macosx ]; then
 		export PATH=$PATH:/opt/local/bin:/Applications/android-sdk-macosx/platform-tools
 	fi
@@ -8,7 +9,7 @@ elif [ `uname` = "Linux" ]; then
     # ==Linux==
     # Source global definitions
 	if [ -f /etc/bashrc ]; then
-	        . /etc/bashrc
+        . /etc/bashrc
 	fi
 fi
 
@@ -49,6 +50,7 @@ if [ $? -eq 0 ];then
         alias cn07='ssh smassh@10.1.246.215'
         alias cn08='ssh smassh@10.1.199.193'
         alias cn09='ssh smassh@10.1.181.97'
+        alias cn10='ssh smassh@10.1.8.39'
 
         # プロンプトの表示変更
         # export PS1="[\u@\h \W]\\$ "
@@ -70,5 +72,7 @@ if [ $? -eq 0 ];then
                 export PS1="[\u@cn08db02 \W]\\$ "
         elif [ $HOSTNAME = "i-958-9989-VM" ];then
                 export PS1="[\u@cn09wb04 \W]\\$ "
+        elif [ $HOSTNAME = "i-958-25343-VM" ];then
+                export PS1="[\u@cn10wb05 \W]\\$ "
         fi
 fi
