@@ -1,7 +1,7 @@
 # --環境別の定義-------------------
 if [ `uname` = "Darwin" ]; then
     # ==mac==
-	alias sb="'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'"
+	alias sl="'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'"
 	if [ -d /Applications/android-sdk-macosx ]; then
 		export PATH=$PATH:/opt/local/bin:/Applications/android-sdk-macosx/platform-tools
 	fi
