@@ -1,0 +1,26 @@
+# Alias for macOS
+
+# google cloud platform
+alias gmy='gcloud config set compute/zone asia-east1-c; gcloud config set project complete-sprite-98601'
+alias gsma='gcloud config set compute/zone asia-east1-a; gcloud config set project positive-fuze-98602'
+alias gsola='gcloud config set compute/zone asia-east1-c; gcloud config set project sollastudio-1057'
+
+alias sl='subl --project ~/work/sublime_project/kara.sublime-project'
+alias o='open .'
+
+# Tab color change
+tab-color() {
+    echo -ne "\033]6;1;bg;red;brightness;$1\a"
+    echo -ne "\033]6;1;bg;green;brightness;$2\a"
+    echo -ne "\033]6;1;bg;blue;brightness;$3\a"
+}
+
+# Tab color resert
+tab-reset() {
+    echo -ne "\033]6;1;bg;*;default\a"
+}
+alias r='tab-color 204 0 0' #ê‘
+alias g='tab-color 255 255 0' #â©êF
+alias b='tab-color 134 200 0' #óŒ
+alias c='tab-reset'
+

@@ -1,5 +1,6 @@
 "vi互換をオフ
 set nocompatible
+inoremap <silent> jj <ESC>
 
 " 日本語の設定
 set encoding=utf-8
@@ -8,12 +9,17 @@ set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 " --表示-----------------------------
 " 色の設定
 hi DiffAdd    ctermfg=black ctermbg=2
-hi DiffChange ctermfg=black ctermbg=3
-hi DiffDelete ctermfg=black ctermbg=6
+"hi DiffChange ctermfg=black ctermbg=3
+"hi DiffDelete ctermfg=black ctermbg=6
 hi DiffText   ctermfg=black ctermbg=7
+" vimdiffの色設定
+"highlight DiffAdd    ctermfg=10 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+"highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
 
 "タブ文字、行末など不可視文字を表示する
-set list
+"set list
 "閉じ括弧が入力されたとき、対応する括弧を表示する
 set showmatch
 " 画面最下行にルーラーを表示する
@@ -37,14 +43,17 @@ set incsearch
 filetype off
 
 " Vundleを初期化してVundle自身もVundle で管理
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Bundle 'gmarik/vundle'
+"set rtp+=~/.vim/bundle/vundle
+"call vundle#rc()
+"Bundle 'gmarik/vundle'
 
 " github にあるプラグイン
-Bundle 'itchyny/lightline.vim'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimfiler'
+"Bundle 'itchyny/lightline.vim'
+"Bundle 'Shougo/unite.vim'
+"Bundle 'Shougo/vimfiler'
+"Bundle 'violetyk/cake.vim'
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'tpope/vim-surround'
 
 " vim-scripts プラグイン
 
@@ -120,4 +129,4 @@ function! MyMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
-" --end---------------------------------
+"--end---------------------------------

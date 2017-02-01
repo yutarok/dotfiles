@@ -1,0 +1,32 @@
+# Alias
+
+# Common
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias vi='vim'
+alias l='ls '
+alias ll='ls -l'
+alias la='ls -la'
+alias lt='ls -lrt'
+alias h='history'
+
+# Git
+alias gbr='git branch -a'
+alias gci='git commit -a'
+alias gco='git checkout'
+alias gdi='git diff'
+alias gst='git status'
+alias gpl='git pull'
+
+# Today's work directory
+export DW=~/work/work_daily/`date '+%Y%m%d'`
+alias w='[ ! -d $DW ] && mkdir $DW ; cd $DW ; pwd'
+alias a='w ; sl worklog_`date '+%Y%m%d'`.txt'
+alias e='find ~/work/work_daily -name "worklog_*" -exec mv {} ~/Google/70log/f_action_evernote/ \;'
+
+# Vagrant chef
+alias vc='cd ~/vagrant/chef-server ; pwd'
+alias v7='cd ~/vagrant/docker-centos7 ; pwd'
+alias gc='cd ~/git/chef/chef-repo ; pwd'
+
