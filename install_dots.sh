@@ -8,9 +8,13 @@ download() {
     git clone git@github.com:yutarok/dotfiles.git $repository
 }
 
-#initialize() {
-#    chmod 644 $repository/.ghci
-#}
+initialize() {
+    if [ -f $repository/ssh.zip ]; then
+	# Be sure to put a password as follows
+	# zip -e ssh.zip -r ssh
+        unzip $repository/ssh.zip -d $repository
+    fi
+}
 
 link() {
     dist=~
@@ -22,15 +26,13 @@ link() {
         bashrc
         gitconfig
 	vimrc
+	ssh
 #        bundle/config
 #        emacs.d/init.el
-#        ghci
 #        pryrc
 #        rspec
-#        ssh/config
     )
 
-    [ -d $dist/.ssh ]     || mkdir $dist/.ssh
     [ -d $dist/.aws ]     || mkdir $dist/.aws
 
     for target in "${targets[@]}"; do
@@ -41,5 +43,6 @@ link() {
 }
 
 [ -d $repository ] || download
-#initialize
+initialize
 link
+
