@@ -13,7 +13,7 @@ initialize() {
 	# Be sure to put a password as follows
 	# zip -e ssh.zip -r ssh -x ssh/known_hosts
         unzip $repository/ssh.zip -d $repository
-        chmod 600 ~/.ssh/*
+        chmod 600 $repository/ssh/*
     fi
 }
 
