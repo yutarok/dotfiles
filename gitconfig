@@ -1,2 +1,4 @@
 [user]
 	email = yutaro.k@gmail.com
+[push]
+	default = simple
