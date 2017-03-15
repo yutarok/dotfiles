@@ -28,6 +28,7 @@ link() {
         gitconfig
 	vimrc
 	ssh
+	gemrc
 #        bundle/config
 #        emacs.d/init.el
 #        pryrc
