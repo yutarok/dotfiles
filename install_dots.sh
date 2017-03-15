@@ -46,4 +46,4 @@ link() {
 [ -d $repository ] || download
 initialize
 link
-
+echo "Dotfiles Installed"
